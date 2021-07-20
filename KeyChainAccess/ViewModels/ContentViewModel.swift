@@ -19,45 +19,86 @@ class ContentViewModel:ObservableObject{
     #warning("Inject Keychain adapter!")
     //TODO: Inject Keychain adapter!
     
-    func add(){
+    func addPassword(){
         print("\(#function)")
         
         //prepare
         let userName = "gokhan"
         let password = "1234"
         
-        KeychainManager().add(userName: userName, password: password) { result in
+        KeychainManager().addPassword(userName: userName, password: password) { result in
             self.handleResult(result)
         }
     }
     
-    func search(){
+    func searchPassword(){
         print("\(#function)")
         //searchReturnsAttributes()
                 
         let userName = "gokhan"
-        KeychainManager().search(userName: userName){ result in
+        KeychainManager().searchPassword(userName: userName){ result in
             self.handleResult(result)
         }
     }
     
    
    
-    func update(){
+    func updatePassword(){
         print("\(#function)")
         let userName = "gokhan"
         let newPassword = "1234_new"
         
-        KeychainManager().update(userName: userName, newPassword: newPassword) { result in
+        KeychainManager().updatePassword(userName: userName, newPassword: newPassword) { result in
             self.handleResult(result)
         }
       
     }
     
-    func delete(){
+    func deletePassword(){
         print("\(#function)")
         let userName = "gokhan"
-        KeychainManager().delete(userName: userName) { result in
+        KeychainManager().deletePassword(userName: userName) { result in
+            self.handleResult(result)
+        }
+    }
+}
+
+extension ContentViewModel{
+    
+    func addNote(){
+        print("\(#function)")
+        
+        let note = Note()
+        KeychainManager().addNote(note: note, completion: { result in
+            self.handleResult(result)
+        })
+    }
+    
+    func fetchNotes(){
+        print("\(#function)")
+
+        KeychainManager().fetchNotes{ result in
+            self.handleResult(result)
+        }
+    }
+    
+    
+    func updateNote(){
+        print("\(#function)")
+        
+        var note = Note()
+        note.body = note.body + " - updated"
+        
+        KeychainManager().updateNote(note: note) { result in
+            self.handleResult(result)
+        }
+        
+    }
+    
+    func deleteNote(){
+        print("\(#function)")
+        let note = Note()
+        KeychainManager().deleteNote(uuid: note.id) { result in
             self.handleResult(result)
         }
     }

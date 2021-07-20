@@ -17,6 +17,10 @@
 		F73850CC26A5C0EC0016055E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73850CB26A5C0EC0016055E /* ContentViewModel.swift */; };
 		F73850CF26A680250016055E /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73850CE26A680250016055E /* KeychainManager.swift */; };
 		F73850D126A6C2670016055E /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = F73850D026A6C2670016055E /* README.txt */; };
+		F73850D326A6E6340016055E /* KeychainManager + note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73850D226A6E6340016055E /* KeychainManager + note.swift */; };
+		F73850D526A6E73E0016055E /* ContentPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73850D426A6E73E0016055E /* ContentPasswordView.swift */; };
+		F73850D726A6E92F0016055E /* ContentNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73850D626A6E92F0016055E /* ContentNoteView.swift */; };
+		F73A758526A704F500AD205D /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73A758426A704F500AD205D /* Note.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		F73850CB26A5C0EC0016055E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		F73850CE26A680250016055E /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		F73850D026A6C2670016055E /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		F73850D226A6E6340016055E /* KeychainManager + note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeychainManager + note.swift"; sourceTree = "<group>"; };
+		F73850D426A6E73E0016055E /* ContentPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPasswordView.swift; sourceTree = "<group>"; };
+		F73850D626A6E92F0016055E /* ContentNoteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentNoteView.swift; sourceTree = "<group>"; };
+		F73A758426A704F500AD205D /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,7 @@
 				F73850B126A5BD840016055E /* AppDelegate.swift */,
 				F73850B326A5BD840016055E /* SceneDelegate.swift */,
 				F73850CD26A680090016055E /* Managers */,
+				F73A758326A704DF00AD205D /* Models */,
 				F73850C726A5BDB50016055E /* ViewModels */,
 				F73850C626A5BDA90016055E /* Views */,
 				F73850C826A5BE2A0016055E /* Assets */,
@@ -87,6 +96,8 @@
 			isa = PBXGroup;
 			children = (
 				F73850B526A5BD840016055E /* ContentView.swift */,
+				F73850D426A6E73E0016055E /* ContentPasswordView.swift */,
+				F73850D626A6E92F0016055E /* ContentNoteView.swift */,
 				F73850C926A5C0770016055E /* ButtonView.swift */,
 			);
 			path = Views;
@@ -115,8 +126,17 @@
 			isa = PBXGroup;
 			children = (
 				F73850CE26A680250016055E /* KeychainManager.swift */,
+				F73850D226A6E6340016055E /* KeychainManager + note.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		F73A758326A704DF00AD205D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F73A758426A704F500AD205D /* Note.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,7 +213,11 @@
 				F73850B226A5BD840016055E /* AppDelegate.swift in Sources */,
 				F73850CF26A680250016055E /* KeychainManager.swift in Sources */,
 				F73850B426A5BD840016055E /* SceneDelegate.swift in Sources */,
+				F73850D326A6E6340016055E /* KeychainManager + note.swift in Sources */,
 				F73850CA26A5C0770016055E /* ButtonView.swift in Sources */,
+				F73A758526A704F500AD205D /* Note.swift in Sources */,
+				F73850D726A6E92F0016055E /* ContentNoteView.swift in Sources */,
+				F73850D526A6E73E0016055E /* ContentPasswordView.swift in Sources */,
 				F73850B626A5BD840016055E /* ContentView.swift in Sources */,
 				F73850CC26A5C0EC0016055E /* ContentViewModel.swift in Sources */,
 			);

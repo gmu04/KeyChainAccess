@@ -13,16 +13,17 @@ enum KeychainError: Error {
 }
 
 
-protocol KeychainAdapter{
-    func add(userName:String, password:String, completion: @escaping (Result<String, KeychainError>) -> Void)
-    func search(userName:String, completion: @escaping (Result<String, KeychainError>) -> Void)
-    func update(userName:String, newPassword:String, completion: @escaping (Result<String, KeychainError>) -> Void)
-    func delete(userName:String, completion: @escaping (Result<String, KeychainError>) -> Void)
+protocol KeychainPasswordAdapter{
+    func addPassword(userName:String, password:String, completion: @escaping (Result<String, KeychainError>) -> Void)
+    func searchPassword(userName:String, completion: @escaping (Result<String, KeychainError>) -> Void)
+    func updatePassword(userName:String, newPassword:String, completion: @escaping (Result<String, KeychainError>) -> Void)
+    func deletePassword(userName:String, completion: @escaping (Result<String, KeychainError>) -> Void)
 }
 
-class KeychainManager:KeychainAdapter{
+
+class KeychainManager:KeychainPasswordAdapter{
     
-    func delete(userName: String, completion: @escaping (Result<String, KeychainError>) -> Void) {
+    func deletePassword(userName: String, completion: @escaping (Result<String, KeychainError>) -> Void) {
         
         let query:[String:Any] = [
             kSecClass as String: kSecClassGenericPassword,
@@ -40,7 +41,7 @@ class KeychainManager:KeychainAdapter{
         completion(.success("Account deleted"))
     }
     
-    func update(userName: String, newPassword:String, completion: @escaping (Result<String, KeychainError>) -> Void) {
+    func updatePassword(userName: String, newPassword:String, completion: @escaping (Result<String, KeychainError>) -> Void) {
         let query:[String:Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String:userName
@@ -59,7 +60,7 @@ class KeychainManager:KeychainAdapter{
         completion(.success("Password updated"))
     }
     
-    func search(userName: String, completion: @escaping (Result<String, KeychainError>) -> Void) {
+    func searchPassword(userName: String, completion: @escaping (Result<String, KeychainError>) -> Void) {
         var item:CFTypeRef?
         
         //package secret as a keychain item
@@ -91,7 +92,7 @@ class KeychainManager:KeychainAdapter{
     }
     
     
-    func add(userName:String, password:String, completion: @escaping (Result<String, KeychainError>) -> Void) {
+    func addPassword(userName:String, password:String, completion: @escaping (Result<String, KeychainError>) -> Void) {
         let passwordData = password.data(using: .utf8)!
 
         //package secret as a keychain item
